@@ -19,7 +19,9 @@ input{
   padding:0 1rem;
   background:none;
   color:inherit;
-  border:green solid .1rem;
+  border:none;
+  border-top:green solid .1rem;
+  border-bottom:green solid .1rem;
   font-size:120%;
   outline:none;
   text-transform:lowercase;
