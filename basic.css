@@ -20,7 +20,6 @@ input{
   background:none;
   color:inherit;
   border:green solid .1rem;
-  border-radius:.5rem;
   font-size:120%;
   outline:none;
   text-transform:lowercase;
@@ -47,7 +46,7 @@ ul{
 #list-product{
   min-height:20rem;
   font-size:70%;
-  padding:0 0 3rem 1rem;
+  padding:0 0 3rem .5rem;
 }
 #list1 > li{}
 #list1 > li:hover{
@@ -60,8 +59,8 @@ ul{
   width:3rem;
   padding:.3rem 0;
   line-height:.6rem;
-  text-align:center;
-}
+  cursor:pointer;
+  text-align:center;}
 
 
 /* product list */
