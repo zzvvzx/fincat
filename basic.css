@@ -14,7 +14,7 @@ body{
 small{ font-size:50%; color:green;}
 h3{ line-height:.9rem; }
 input{
-  margin:1rem 0;
+  margin-bottom:1rem;
   width:100%;
   height:2.5rem;
   line-height:2.5rem;
@@ -42,19 +42,19 @@ ul{
   padding:0;
   columns: 8;
 }
-
 .title{
   font-family:consolas, monotype;
   text-align:center;
 }
-
 #list-category{
   width:calc(100% - 1rem);
+  padding-bottom:1rem;
   color:green;
   font-weight:700;
   font-size:60%;
 }
 #list-product{
+  padding-bottom:1rem;
   font-size:70%;
   text-align:center;
 }
@@ -75,8 +75,6 @@ ul{
 .item-cat.fav{
   color:#aaa!important;
 }
-
-
 /* product list */
 .item:hover > .item-qty,
 .item:hover{ background:teal; color:#fff!important; }

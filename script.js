@@ -1,3 +1,5 @@
+'use strict';
+
 let product;
 let product_name = [];
 let product_cat = [];
@@ -35,7 +37,7 @@ const conf = {
     "makanan",
     "minuman"
   ]
-}
+};
 
 /* set up XMLHttpRequest */
 let url = "db.xlsx";
@@ -64,7 +66,7 @@ xhr.onload = function(e) {
 }
 xhr.send();
 
-
+/* catalog */
 function genCat(){
   let html = '';
   let fav = conf.favorite;
@@ -76,17 +78,14 @@ function genCat(){
   list1.innerHTML += html;
 }
 
-
 /* search */
 function ser(str){
-  
   search    = [];
-  let str_empty = 'No data.';
-  let str_start = 'Ketik nama barang atau pilih kategori  . .';
+  let str_empty = 'Not found!';
+  let str_start = '[ Ketik nama barang atau pilih kategori ]';
   let html  = '';
   let db    = str ? str : input.value;
   let t;
-  
   // by input
   if(!str){
     t = input.value;
@@ -103,26 +102,22 @@ function ser(str){
         search.push(Object.values(product[i]));
     }
   }
-  
   if(t.length < 2){
     listProduct.innerHTML = str_start;
     return;
   }
-  
   // list
   for(let i=0; i<search.length; i++){
     let q = search[i][0].substr(0,3);
-    
     html += '<li class="item">' + 
       '<span class="item-harga">' + parseInt(search[i][2]).toLocaleString('id') + '</span>' + 
       '<span class="item-qty">'  + q + '</span>' +
       '<span class="item-nama">'  + search[i][4] + '</span>' +
     '</li>';
   }
-  listProduct.innerHTML = html ? html : empty;
+  listProduct.innerHTML = html ? html : str_empty;
   window.scrollTo(0,0);
 }
-
 
 /* kbd */
 document.addEventListener('keyup', function(e){
@@ -144,7 +139,6 @@ document.addEventListener('click', function(e){
     catch(e){}
     e.target.classList.add('active');
   };
-    
 });
 
 input.focus();
