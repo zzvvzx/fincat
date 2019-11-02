@@ -8,6 +8,34 @@ const input = document.getElementById('input');
 const list1 = document.getElementById('list-category');
 const listProduct = document.getElementById('list-product');
 
+const conf = {
+ "favorite": [ 
+    "laptop",
+    "printer",
+    "fd",
+    "mouse",
+    "keyboard",
+    "tinta",
+    "catridge",
+    "kabel",
+    "hdd",
+    "pulpen",
+    "speaker",
+    "spidol",
+    "bateray",
+    "kertas",
+    "map",
+    "buku",
+    "lakban",
+    "headset",
+    "stik",
+    "charger",
+    "memory",
+    "layar",
+    "makanan",
+    "minuman"
+  ]
+}
 
 /* set up XMLHttpRequest */
 let url = "db.xlsx";
@@ -32,16 +60,18 @@ xhr.onload = function(e) {
     product_catUnique[v[5].toLowerCase()] = 0;
   }
   product_catUnique = Object.keys(product_catUnique).sort();
-  genIndex();
+  genCat();
 }
 xhr.send();
 
 
-function genIndex(){
+function genCat(){
   let html = '';
+  let fav = conf.favorite;
   for(let i=0; i<product_catUnique.length; i++){
     let c = product_catUnique[i];
-    html += '<li class="item-cat" data-cat="' + c + '">' + c + '</li>';
+    let f = fav.includes(c) ? ' fav' : '';
+    html += '<li class="item-cat' + f + '" data-cat="' + c + '">' + c + '</li>';
   }
   list1.innerHTML += html;
 }
@@ -79,7 +109,7 @@ function ser(str){
     return;
   }
   
-  // gen list
+  // list
   for(let i=0; i<search.length; i++){
     let q = search[i][0].substr(0,3);
     
@@ -90,6 +120,7 @@ function ser(str){
     '</li>';
   }
   listProduct.innerHTML = html ? html : empty;
+  window.scrollTo(0,0);
 }
 
 
@@ -107,7 +138,12 @@ document.addEventListener('click', function(e){
   if(e.target.parentNode.id === 'list-category'){
     if(e.target.dataset.cat)
       ser(e.target.dataset.cat);
-  }
+    try{
+      document.querySelector('.active').classList.remove('active');
+    }
+    catch(e){}
+    e.target.classList.add('active');
+  };
     
 });
 

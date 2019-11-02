@@ -11,6 +11,8 @@ body{
   color:#aaa;
   font-family:'Segoe UI';
 }
+small{ font-size:50%; color:green;}
+h3{ line-height:.9rem; }
 input{
   margin:1rem 0;
   width:100%;
@@ -26,11 +28,12 @@ input{
   outline:none;
   text-transform:lowercase;
   font-family:inherit;
+  text-align:center;
 }
 li{
   list-style:none;
 }
-li:hover{
+.active{
   background:green;
   color:#fff!important;
 }
@@ -39,6 +42,12 @@ ul{
   padding:0;
   columns: 8;
 }
+
+.title{
+  font-family:consolas, monotype;
+  text-align:center;
+}
+
 #list-category{
   width:calc(100% - 1rem);
   color:green;
@@ -46,9 +55,8 @@ ul{
   font-size:60%;
 }
 #list-product{
-  min-height:20rem;
   font-size:70%;
-  padding:0 0 3rem .5rem;
+  text-align:center;
 }
 #list1 > li{}
 #list1 > li:hover{
@@ -62,13 +70,20 @@ ul{
   padding:.3rem 0;
   line-height:.6rem;
   cursor:pointer;
+  text-align:center;
+}
+.item-cat.fav{
+  color:#aaa!important;
 }
 
 
 /* product list */
+.item:hover > .item-qty,
+.item:hover{ background:teal; color:#fff!important; }
 .item-harga{
   display:inline-block;
   width:3rem;
+  padding-left:.5rem;
   text-align:right;
 }
 .item-qty{
@@ -76,8 +91,9 @@ ul{
   width:2rem;
   padding-left:.5rem;
   color:teal;
+  vertical-align:middle;
 }
 .item-nama{
   display:inline-block;
-  width:12rem;
+  width:14rem;
 }
