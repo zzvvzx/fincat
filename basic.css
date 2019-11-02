@@ -1,8 +1,10 @@
+*{
+  box-sizing: border-box;
+}
 html,
 body,
 div{
   margin:0;
-  box-sizing: border-box;
 }
 body{
   background:#000;
@@ -10,10 +12,10 @@ body{
   font-family:'Segoe UI';
 }
 input{
-  width:calc(100% - 3rem);
+  margin:1rem 0;
+  width:100%;
   height:2.5rem;
   line-height:2.5rem;
-  margin:.5rem;
   padding:0 1rem;
   background:none;
   color:inherit;
@@ -27,16 +29,23 @@ input{
 li{
   list-style:none;
 }
+li:hover{
+  background:green;
+  color:#fff!important;
+}
 ul{
-  columns: 6;
+  margin:0;
+  padding:0;
+  columns: 8;
 }
 #list-category{
-  padding:0 1rem;
+  width:calc(100% - 1rem);
   color:green;
   font-weight:700;
-  font-size:70%;
+  font-size:60%;
 }
 #list-product{
+  min-height:20rem;
   font-size:70%;
   padding:0 0 3rem 1rem;
 }
@@ -44,6 +53,14 @@ ul{
 #list1 > li:hover{
   cursor:pointer;
   text-decoration:underline;
+}
+/* category */
+.item-cat{
+  display:inline-block;
+  width:3rem;
+  padding:.3rem 0;
+  line-height:.6rem;
+  text-align:center;
 }
 
 
@@ -55,7 +72,7 @@ ul{
 }
 .item-qty{
   display:inline-block;
-  width:1.5rem;
+  width:2rem;
   padding-left:.5rem;
   color:teal;
 }

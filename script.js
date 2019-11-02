@@ -41,7 +41,7 @@ function genIndex(){
   let html = '';
   for(let i=0; i<product_catUnique.length; i++){
     let c = product_catUnique[i];
-    html += '<li data-cat="' + c + '">' + c + '</li>';
+    html += '<li class="item-cat" data-cat="' + c + '">' + c + '</li>';
   }
   list1.innerHTML += html;
 }
