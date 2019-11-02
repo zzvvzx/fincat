@@ -1,5 +1,5 @@
-*{
-  box-sizing: border-box;
+*{ 
+  box-sizing: border-box
 }
 html,
 body,
@@ -9,10 +9,10 @@ div{
 body{
   background:#000;
   color:#aaa;
-  font-family:'Segoe UI';
+  font-family:'Segoe UI', sans;
 }
-small{ font-size:50%; color:green;}
-h3{ line-height:.9rem; }
+h3{ line-height:.9rem }
+small{ font-size:50%; color:green }
 input{
   margin-bottom:1rem;
   width:100%;
@@ -33,19 +33,25 @@ input{
 li{
   list-style:none;
 }
-.active{
-  background:green;
-  color:#fff!important;
-}
 ul{
   margin:0;
   padding:0;
   columns: 8;
 }
+.active{
+  background:green;
+  color:#fff!important;
+}
 .title{
   font-family:consolas, monotype;
   text-align:center;
 }
+#in{
+  margin: 0 auto;
+  max-width:24rem;
+}
+
+/* category */
 #list-category{
   width:calc(100% - 1rem);
   padding-bottom:1rem;
@@ -53,17 +59,6 @@ ul{
   font-weight:700;
   font-size:60%;
 }
-#list-product{
-  padding-bottom:1rem;
-  font-size:70%;
-  text-align:center;
-}
-#list1 > li{}
-#list1 > li:hover{
-  cursor:pointer;
-  text-decoration:underline;
-}
-/* category */
 .item-cat{
   display:inline-block;
   width:3rem;
@@ -75,9 +70,19 @@ ul{
 .item-cat.fav{
   color:#aaa!important;
 }
-/* product list */
+
+/* product */
+#list-product{
+  padding-bottom:1rem;
+  font-size:70%;
+  text-align:center;
+}
 .item:hover > .item-qty,
-.item:hover{ background:teal; color:#fff!important; }
+.item:hover{ 
+  background:teal;
+  color:#fff!important;
+  cursor:default;
+}
 .item-harga{
   display:inline-block;
   width:3rem;
